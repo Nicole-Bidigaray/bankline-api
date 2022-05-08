@@ -1,43 +1,12 @@
-package com.dio.santander.bankline.api.model;
+package com.dio.santander.bankline.api.dto;
 
-import javax.persistence.*;
-import java.time.LocalDateTime;
+import com.dio.santander.bankline.api.model.MovimentacaoTipo;
 
-@Entity
-@Table(name = "tab_movimentacao")
-public class Movimentacao {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    @Column(name = "data_hora")
-    private LocalDateTime datahora;
-
+public class NovaMovimentacao {
     private String descricao;
-
     private Double valor;
-
-    @Enumerated(EnumType.STRING)
     private MovimentacaoTipo tipo;
-
-    @Column(name = "id_conta")
     private Integer idConta;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public LocalDateTime getDatahora() {
-        return datahora;
-    }
-
-    public void setDatahora(LocalDateTime datahora) {
-        this.datahora = datahora;
-    }
 
     public String getDescricao() {
         return descricao;
